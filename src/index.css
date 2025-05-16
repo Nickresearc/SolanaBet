@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-dark-300 text-white;
+    background-image: 
+      radial-gradient(circle at 25% 10%, rgba(121, 40, 255, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.10) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-400;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-800 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-700;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-dark-200 border border-dark-100 rounded-xl p-4 backdrop-blur-sm backdrop-filter;
+  }
+
+  .glass-card {
+    @apply bg-dark-200/70 border border-dark-100/50 rounded-xl shadow-lg backdrop-blur-md;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-300 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 hover:bg-primary-700 text-white focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-600 hover:bg-secondary-700 text-white focus:ring-secondary-500;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent-500 hover:bg-accent-600 text-white focus:ring-accent-400;
+  }
+
+  .btn-outline {
+    @apply btn bg-transparent border border-gray-600 hover:border-white text-gray-300 hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-white/5 text-gray-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply badge bg-success-500/20 text-success-300;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning-500/20 text-warning-300;
+  }
+
+  .badge-error {
+    @apply badge bg-error-500/20 text-error-300;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-500/20 text-primary-300;
+  }
+
+  .input {
+    @apply w-full bg-dark-400 border border-dark-100 rounded-lg px-4 py-2 text-sm text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none;
+  }
+
+  .heading-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent;
+  }
+}
